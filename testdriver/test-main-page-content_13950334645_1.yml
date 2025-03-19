@@ -1,0 +1,13 @@
+version: 4.2.20
+session: 67dae3fd66ff658bbf937acb
+steps:
+  - prompt: Assert that the main illustration is displayed on the homepage.
+    commands:
+      - command: wait-for-image
+        description: main illustration on the homepage
+  - prompt: Scroll down to view more content.
+    commands:
+      - command: scroll
+        direction: down
+        method: keyboard
+        amount: 300
