@@ -1,0 +1,48 @@
+version: 4.2.20
+session: 67dae4241b8e3a3c383bca52
+steps:
+  - prompt: Navigate to the contact page via the menu.
+    commands:
+      - command: hover-image
+        description: menu icon in the top left corner
+        action: click
+      - command: scroll-until-text
+        text: Contact
+        direction: down
+        method: keyboard
+  - prompt: Navigate to the contact page via the menu.
+    commands:
+      - command: hover-text
+        text: Contact
+        description: contact option in the menu
+        action: click
+  - prompt: Assert that the contact form is visible.
+    commands:
+      - command: assert
+        expect: the contact form with "First Name" is visible
+  - prompt: Fill out the contact form with test data.
+    commands:
+      - command: hover-text
+        text: First Name
+        description: first name input field
+        action: click
+      - command: type
+        text: John
+      - command: hover-text
+        text: Last Name
+        description: last name input field
+        action: click
+      - command: type
+        text: Doe
+      - command: hover-text
+        text: Email Address
+        description: email address input field
+        action: click
+      - command: type
+        text: johndoe@example.com
+  - prompt: Click the "Submit" button.
+    commands:
+      - command: hover-text
+        text: Subscribe
+        description: submit button on the contact form
+        action: click
